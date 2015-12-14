@@ -50,7 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="IItem.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderStatus.cs" />
     <Compile Include="PaymentMethod.cs" />
+    <Compile Include="Price.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

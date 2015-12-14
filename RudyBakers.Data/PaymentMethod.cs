@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RudyBakers.Data
 {
-	class PaymentMethod
+	public class PaymentMethod
 	{
 		public string Number { get; set; }
 		public string ExpireDate { get; set; }
