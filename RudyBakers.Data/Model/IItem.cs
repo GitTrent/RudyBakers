@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RudyBakers.Data
+namespace RudyBakers.Data.Model
 {
 	public interface IItem
 	{
+		int ID { get; set; }
 		string Name { get; set; }
 		string ShortDescription { get; set; }
 		string LongDescription { get; set; }
-		Price Price { get; set; }
+		ICollection<Price> Prices { get; set; }
 	}
 }

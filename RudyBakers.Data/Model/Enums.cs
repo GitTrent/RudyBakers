@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RudyBakers.Data.Enums
+namespace RudyBakers.Data.Model
 {
 	public enum UnitEnum
 	{

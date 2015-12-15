@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RudyBakers.Data.Enums;
 
-namespace RudyBakers.Data
+namespace RudyBakers.Data.Model
 {
 	public class OrderStatus
 	{
+		public int ID { get; set; }
 		public DateTime ChangeDate { get; set; }
-		public OrderStatusEnum Status { get; set; }
+		public virtual OrderStatusEnum Status { get; set; }
 	}
 }

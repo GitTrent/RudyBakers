@@ -11,6 +11,7 @@
     <AssemblyName>RudyBakers.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,14 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="IItem.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="OrderStatus.cs" />
-    <Compile Include="PaymentMethod.cs" />
-    <Compile Include="Price.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="DAL\RudyBakerInitializer.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\FoodItem.cs" />
+    <Compile Include="Model\HealthInfo.cs" />
+    <Compile Include="Model\IItem.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderStatus.cs" />
+    <Compile Include="Model\PaymentMethod.cs" />
+    <Compile Include="Model\Price.cs" />
+    <Compile Include="DAL\RudyBakerContext.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

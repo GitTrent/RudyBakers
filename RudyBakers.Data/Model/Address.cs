@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RudyBakers.Data
+namespace RudyBakers.Data.Model
 {
 	public class Address
 	{
+		public int ID { get; set; }
 		public string Street { get; set; }
 		public string Apt { get; set; }
 		public string City { get; set; }

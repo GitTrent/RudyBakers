@@ -5,6 +5,18 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RudyBakers.Data", "RudyBakers.Data\RudyBakers.Data.csproj", "{2A8DA25F-7554-49DA-8B75-8747DA0D62B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{C91B82AD-86B2-4213-B980-6A444364AEBB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureVMPublishModule.psm1 = PublishScripts\AzureVMPublishModule.psm1
+		PublishScripts\Publish-WebApplicationVM.ps1 = PublishScripts\Publish-WebApplicationVM.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{C39D6FA9-4BC8-42F8-A065-25135C96714D}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\RudyBakersControlCenter-WAWS-dev.json = PublishScripts\Configurations\RudyBakersControlCenter-WAWS-dev.json
+		PublishScripts\Configurations\RudyBakersWeb-WAWS-dev.json = PublishScripts\Configurations\RudyBakersWeb-WAWS-dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C39D6FA9-4BC8-42F8-A065-25135C96714D} = {C91B82AD-86B2-4213-B980-6A444364AEBB}
 	EndGlobalSection
 EndGlobal

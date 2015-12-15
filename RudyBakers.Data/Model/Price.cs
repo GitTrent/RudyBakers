@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RudyBakers.Data.Enums;
 
-namespace RudyBakers.Data
+namespace RudyBakers.Data.Model
 {
 	public class Price
 	{
+		public int ID { get; set; }
 		public decimal Amount { get; set; }
 		public UnitEnum Unit { get; set; }
 	}
