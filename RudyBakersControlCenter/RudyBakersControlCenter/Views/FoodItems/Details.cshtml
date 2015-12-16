@@ -1,0 +1,64 @@
+﻿@model RudyBakersControlCenter.ViewModels.FoodItemViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FoodItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodItem.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodItem.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodItem.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodItem.ShortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodItem.LongDescription)
+        </dt>
+
+	    <dd>
+		    @Html.DisplayFor(model => model.FoodItem.LongDescription)
+	    </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.FoodItem.HealthInfos)
+		</dt>
+
+	    <dd>
+		    @foreach (var hi in Model.FoodItem.HealthInfos)
+		    {
+			    @hi.Info<br/>
+		    }
+	    </dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.FoodItem.Prices)
+		</dt>
+
+		<dd>
+			@foreach (var p in Model.PriceDisplay)
+			{
+				@p<br />
+			}
+		</dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FoodItem.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

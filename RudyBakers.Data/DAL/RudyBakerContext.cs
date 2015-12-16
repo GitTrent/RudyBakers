@@ -14,6 +14,7 @@ namespace RudyBakers.Data.DAL
 		public RudyBakerContext() : base("RudyBakerContext")
 		{
 		}
+		
 
 		public DbSet<Address> Addresses { get; set; }
 		public DbSet<FoodItem> FoodItems { get; set; }
@@ -28,10 +29,21 @@ namespace RudyBakers.Data.DAL
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
+			modelBuilder.Entity<FoodItem>()
+				.HasMany(f=>f.HealthInfos)
+				.WithMany(h=>h.FoodItems)
+				.Map(m =>
+				{
+					m.ToTable("FoodItemHealthInfo");
+					m.MapLeftKey("FoodItem_ID");
+					m.MapRightKey("HealthInfo_ID");
+				}
+				);
+			base.OnModelCreating(modelBuilder);
 			
 			
 		}
+		protected override void OnConfiguring(Entityop)
 	}
 	
 }

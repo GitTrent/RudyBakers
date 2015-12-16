@@ -1,0 +1,75 @@
+﻿@using MvcCheckBoxList.Model
+@model RudyBakersControlCenter.ViewModels.FoodItemViewModel
+
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<h4>FoodItem</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.FoodItem.ID)
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.FoodItem.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.FoodItem.Name, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.FoodItem.Name, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.FoodItem.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.FoodItem.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.FoodItem.ShortDescription, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.FoodItem.LongDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.FoodItem.LongDescription, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.FoodItem.LongDescription, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.FoodItem.HealthInfos, htmlAttributes: new {@class = "control-label col-md-2"})
+			<div class="col-md-10">
+				@Html.CheckBoxListFor(m => m.PostedHealthInfoIds, m => m.AllHealthInfos, x => x.ID, x => x.Info, m => m.FoodItem.HealthInfos, Position.Vertical)
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.Label("Prices", htmlAttributes: new { @class = "control-label col-md-2" })
+			@Html.ActionLink("Add","AddPrice", new {foodItemId = Model.FoodItem.ID})
+			<div class="col-md-10">
+				@Html.EditorFor(m => m.FoodItem.Prices)
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Save" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+
+
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}
